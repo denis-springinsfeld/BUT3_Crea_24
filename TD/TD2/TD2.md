@@ -361,21 +361,21 @@ export default function App() {
 
   const [isComplete, setIsComplete] = useState(false);
 
-  const handlerSubmit = () => {
+  const handleSubmit = () => {
     setIsComplete(!isComplete);
   };
 
-  const handlerInput = (e) => {
+  const handleInput = (e) => {
     setName(e.target.value);
   };
 
-  const handlerResetName = () => {
+  const handleResetName = () => {
     setName("");
   };
 
   return (
     <div>
-      <form onSubmit={handlerSubmit}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Nom</label>
 
         <input
@@ -384,18 +384,18 @@ export default function App() {
           type="text"
           placeholder="Entrer votre nom"
           value={name}
-          onInput={handlerInput}
+          onInput={handleInput}
         />
       </form>
 
-      <Boutton className="mt-4" onClick={handlerResetName}>
+      <Boutton className="mt-4" onClick={handleResetName}>
         Reset
       </Boutton>
-      <Boutton className="mt-4" onClick={handlerSubmit}>
-        Enter
+      <Boutton className="mt-4" onClick={handleSubmit}>
+        Submit
       </Boutton>
 
-      {isComplete && <Modale onClick={handlerSubmit}>Bonjour {name}</Modale>}
+      {isComplete && <Modale onClick={handleSubmit}>Bonjour {name}</Modale>}
     </div>
   );
 }
