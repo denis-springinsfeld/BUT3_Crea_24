@@ -428,3 +428,25 @@ const Modale = ({ children, onClick }) => {
   );
 };
 ```
+
+
+## SUJET TP
+
+## Formulaire d'inscription à la newsletter avec message de réussite et d'erreur.
+
+Choisir une marque/entreprise et son design system sur un des deux sites suivant:
+https://designsystems.fr/
+https://adele.uxpin.com
+
+On vous demande de construire ce formulaire d'inscription à un bulletin d'information pour cette marque/entreprise en respectant scrupuleusement son design system.
+Vos utilisateurs devraient être en mesure de :
+
+- Ajoutez leur e-mail et soumettez le formulaire
+- Voir un message de réussite avec leur e-mail après avoir soumis le formulaire avec succès ex: "Merci pour votre abonnement! Votre e-mail `pierre.faire@gtag.com` a bien été ajouté à notre liste d'abonnés."
+- Voir les messages de validation/erreur du formulaire si :
+  - Le champ est vide
+  - L'adresse e-mail n'est pas formatée correctement
+- Optimisez l'interface en fonction de la taille de l'écran de l'appareil de l'utilisateur
+- Jouez avec les micro-interactions pour rendre l'expérience utilisateur plus agréable (animation, hover, etc.)
+
+Technique ReactJS + TailwindCss + Framermotion
