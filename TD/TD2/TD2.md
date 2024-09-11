@@ -141,6 +141,50 @@ export default function Button = ({ variant = "primary", size = "medium", classN
 
 Créer un composant `Counter` qui affiche un compteur et un bouton `+1`.
 
+
+```jsx
+import { useState } from "react";
+
+// Composant Parent
+export default function App() {
+  // State
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div className="flex h-screen flex-col items-center justify-center gap-6">
+      <h1 className="text-4xl font-bold">{count}</h1>
+      <Compteur increment={handleIncrement} reset={setCount} />
+    </div>
+  );
+}
+
+// Composant Enfant
+const Compteur = ({ increment, reset }) => {
+  return (
+    <>
+      <button
+        className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+        onClick={increment}
+      >
+        Incremente
+      </button>
+      <button
+        className="rounded bg-gray-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+        onClick={() => reset(0)}
+      >
+        Reset
+      </button>
+    </>
+  );
+};
+```
+
+
+
 ### Exercices
 
 Reproduire la modale (video1).
