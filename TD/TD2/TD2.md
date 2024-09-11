@@ -291,6 +291,58 @@ const Boutton = ({ children, onClick, className }) => {
 };
 ```
 
+## Condition if, constition? true:false , && 
+```jsx
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
+
+// Composant Parent
+export default function App() {
+  // State
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className="flex h-screen flex-col items-center justify-center gap-6">
+      <Boutton onClick={handleClick}>Open Modale</Boutton>
+
+      {isOpen && <Modale onClick={handleClick}>C'est une Modale</Modale>}
+    </div>
+  );
+}
+
+// Composant Enfant Enfant
+
+const Boutton = ({ children, onClick, className }) => {
+  return (
+    <button
+      className={twMerge(
+        "rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700",
+        className,
+      )}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
+
+const Modale = ({ children, onClick }) => {
+  return (
+    <div
+      onClick={onClick}
+      className="fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50"
+    >
+      <div className="rounded bg-white p-4">{children}</div>
+    </div>
+  );
+};
+```
+
 
 ### Exercices
 
