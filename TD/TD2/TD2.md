@@ -182,7 +182,57 @@ const Compteur = ({ increment, reset }) => {
   );
 };
 ```
+```jsx
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
+// Composant Parent
+export default function App() {
+  // State
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div className="flex h-screen flex-col items-center justify-center gap-6">
+      <h1 className="text-4xl font-bold">{count}</h1>
+      <Compteur increment={handleIncrement} reset={setCount} />
+    </div>
+  );
+}
+
+// Composant Enfant
+const Compteur = ({ increment, reset }) => {
+  return (
+    <>
+      <Boutton onClick={increment} className="bg-green-500">
+        Incrementer
+      </Boutton>
+      <Boutton onClick={() => reset(0)} className="bg-red-500">
+        Reset
+      </Boutton>
+    </>
+  );
+};
+
+// Composant Enfant Enfant
+
+const Boutton = ({ children, onClick, className }) => {
+  return (
+    <button
+      className={twMerge(
+        "rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700",
+        className,
+      )}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
+```
 
 
 ### Exercices
