@@ -235,6 +235,63 @@ const Boutton = ({ children, onClick, className }) => {
 ```
 
 
+```jsx
+import { useState } from "react";
+import { twMerge } from "tailwind-merge";
+
+// Composant Parent
+export default function App() {
+  // State
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  // Composition
+  return (
+    <div className="flex h-screen flex-col items-center justify-center gap-6">
+      <h1 className="text-4xl font-bold">{count}</h1>
+      <Compteur>
+        <Boutton onClick={handleIncrement} className={"bg-red-500"}>
+          Incrémenter
+        </Boutton>
+        <Boutton
+          onClick={() => {
+            setCount(0);
+          }}
+          className={"bg-gray-500"}
+        >
+          Reset
+        </Boutton>
+      </Compteur>
+    </div>
+  );
+}
+
+// Composant Enfant
+const Compteur = ({ children }) => {
+  return <>{children}</>;
+};
+
+// Composant Enfant Enfant
+
+const Boutton = ({ children, onClick, className }) => {
+  return (
+    <button
+      className={twMerge(
+        "rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700",
+        className,
+      )}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
+```
+
+
 ### Exercices
 
 Reproduire la modale (video1).
