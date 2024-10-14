@@ -352,7 +352,7 @@ npx shadcn@latest add button
 
 ```
 
-- Modifier `App.jsxr` :
+- Modifier `App.jsx` :
 
 ```javascript
 import { Button } from "@/components/ui/button";
@@ -365,3 +365,8 @@ export default function Home() {
   );
 }
 ```
+Si problème
+```bash
+ npm install -g npm
+```
+
