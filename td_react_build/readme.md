@@ -2,7 +2,7 @@
 
 GitHub Pages est un service d'hébergement de site statique qui vous permet d'héberger votre site Web directement à partir d'un référentiel GitHub. C'est une excellente option pour héberger des sites Web statiques, de la documentation et des blogs personnels. 
 
-https://<username>.github.io/<repository-name>/
+```https://<username>.github.io/<repository-name>/```
 
 
 ## Projet React
