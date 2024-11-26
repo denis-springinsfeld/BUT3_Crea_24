@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 2em;
+        background: rgb(17 24 39);
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .grid-container {
+        /* Création d'un contexte Grid */
+        display: grid;
+        /* Gestion du nombre de colonnes automatique taille min de 10rem */
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+        /* Taille de */
+        grid-auto-rows: min-content;
+        /* Gestion de l'espacement entre les éléments 1.5rem*/
+        gap: 1.5rem;
+        /* Algorithme de placement automatique. */
+        grid-auto-flow: dense;
+      }
+
+      .grid__item {
+        /* align-self: stretch;
+        justify-self: stretch; */
+        overflow: hidden;
+      }
+
+      .grid__img {
+        /* L'image est dimensionnée pour maintenir son ratio d'affichage tout en remplissant toute la boîte de contenu */
+        object-fit: cover;
+        /* L'image est positionnée par rapport à son centre */
+        object-position: center;
+        /* Filtre gris */
+        filter: grayscale(100%);
+        /* Transition */
+        transition: 0.5s;
+      }
+
+      .portrait {
+        /* Positionnement sur une ligne : automatique suivant l'algo de placement et s'étand sur 2 lignes */
+        grid-row: auto / span 2;
+      }
+
+      .landscape {
+        /* Positionnement sur une colonne : automatique suivant l'algo de placement et s'étand sur 2 colonnes */
+        grid-column: auto / span 2;
+      }
+
+      .grid__item:hover .grid__img {
+        /* Annule le filtre */
+        filter: grayscale(0);
+        /* Zoom */
+        transform: scale(1.4);
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul class="grid-container">
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/200/300?random=1"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item square">
+        <img
+          src="http://unsplash.it/300/300?random=2"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item landscape">
+        <img
+          src="http://unsplash.it/300/200?random=3"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item landscape">
+        <img
+          src="http://unsplash.it/500/300?random=4"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item landscape">
+        <img
+          src="http://unsplash.it/200/180?random=5"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/300/320?random=6"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item landscape">
+        <img
+          src="http://unsplash.it/400/300?random=7"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/200/300?random=8"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item square">
+        <img
+          src="http://unsplash.it/300/300?random=9"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/250/301?random=10"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item landscape">
+        <img
+          src="http://unsplash.it/300/280?random=11"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item landscape">
+        <img
+          src="http://unsplash.it/280/150?random=12"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/290/300?random=13"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/110/200?random=14"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/180/270?random=15"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/201/300?random=16"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/200/300?random=17"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/200/300?random=18"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/200/300?random=19"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/200/300?random=20"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/200/300?random=21"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/200/300?random=22"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/200/300?random=23"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item landscape">
+        <img
+          src="http://unsplash.it/500/301?random=24"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+      <li class="grid__item portrait">
+        <img
+          src="http://unsplash.it/200/300?random=25"
+          class="grid__img"
+          alt=""
+        />
+      </li>
+    </ul>
+  </body>
+</html>
